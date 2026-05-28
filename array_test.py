@@ -1,6 +1,8 @@
 import array
 
-numbers = array.array('i',[1,2,3,4,5])
+# numbers = array.array('i',[1,2,3,4,5])
+
+numbers = array.array('d',[1,2,3,4,5])
 
 # print(numbers[0])
 
