@@ -2,10 +2,11 @@ import array
 
 # numbers = array.array('i',[1,2,3,4,5])
 
-numbers = array.array('d',[1,2,3,4,5])
+# numbers = array.array('d',[1,2,3,4,5])
+
+numbers = array.array('w',['a','b','c','d','e'])
 
 # print(numbers[0])
 
 for i in numbers:
     print(i, end=' ')
-print()
