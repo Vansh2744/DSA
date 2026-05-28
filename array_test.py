@@ -36,3 +36,6 @@ print(numbers)
 copy_array = array.array(numbers.typecode, [num for num in numbers])
 
 print(copy_array)
+print(copy_array[::-1])
+
+print(numbers.index(20))
