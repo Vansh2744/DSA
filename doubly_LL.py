@@ -1,0 +1,63 @@
+class Node:
+    def __init__(self, data,prev=None, next=None):
+        self.data = data
+        self.prev = prev
+        self.next = next
+
+class DoublyLL:
+    def __init__(self, head=None):
+        self.head = head
+
+    def insert_end(self, data):
+        node = Node(data)
+
+        if(self.head != None):
+            temp = self.head
+            while(temp.next != None):
+                temp = temp.next
+            node.prev = temp
+            temp.next = node
+
+        else:
+            self.head = node
+
+    def insert_start(self, data):
+        node = Node(data)
+
+        if(self.head != None):
+            self.head.prev = node
+            node.next = self.head
+            self.head = node
+        else:
+            self.head = node
+
+    def print_all(self):
+        if(self.head == None):
+            print("No data available")
+        else:
+            temp = self.head
+            while(temp.next != None):
+                print(temp.data)
+                temp = temp.next
+            print(temp.data)
+
+    def print_prev(self, value):
+        temp = self.head
+        while(temp.data != value):
+            temp = temp.next
+        print(temp.prev.data)
+
+ll = DoublyLL()
+
+ll.insert_end(10)
+ll.insert_end(20)
+ll.insert_end(30)
+ll.insert_end(40)
+ll.insert_end(50)
+
+ll.insert_start(5)
+ll.insert_start(4)
+ll.insert_start(3)
+ll.insert_start(2)
+
+ll.print_all()
