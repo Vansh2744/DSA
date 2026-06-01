@@ -45,7 +45,7 @@ class DoublyLL:
         temp = self.head
 
         if(self.head.data == data):
-            self.head = self.head.next
+            self.head = temp.next
             self.head.prev = None
             return
         while(temp.data != data):
@@ -87,7 +87,7 @@ ll.insert_start(2)
 
 ll.insert_between(100, 50)
 
-ll.delete_node(100)
-ll.delete_node(50)
+# ll.delete_node(100)
+ll.delete_node(2)
 
 ll.print_all()
