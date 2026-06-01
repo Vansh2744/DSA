@@ -17,6 +17,38 @@ class SinglyLL:
         else:
             self.head = temp
 
+    def insert_start(self, data):
+        temp = Node(data)
+        if(self.head == None):
+            self.head = temp
+        else:
+            temp.next = self.head
+            self.head = temp
+
+    def insert_between(self, data, after):
+        temp = Node(data)
+        t1 = self.head
+
+        if(self.head == after):
+            self.head.next = temp
+
+        while(t1.data != after):
+            t1 = t1.next
+        temp.next = t1.next
+        t1.next = temp
+
+    def delete_node(self, value):
+        t1 = self.head
+        prev = t1
+        if(self.head.data == value):
+            self.head = prev.next
+
+        while(t1.data != value):
+            prev = t1
+            t1 = t1.next
+
+        prev.next = t1.next
+
     def print_all(self):
         t1 = self.head
 
@@ -30,5 +62,8 @@ ll = SinglyLL()
 
 ll.insert_end(10)
 ll.insert_end(20)
+ll.insert_start(5)
+ll.insert_between(30, 5)
+ll.delete_node(20)
 
 ll.print_all()
