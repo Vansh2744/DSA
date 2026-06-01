@@ -31,6 +31,17 @@ class DoublyLL:
         else:
             self.head = node
 
+    def insert_between(self, data, after):
+        node = Node(data)
+        temp = self.head
+      
+        while(temp.data != after):
+            temp = temp.next
+        node.prev = temp
+        node.next = temp.next
+        temp.next = node
+
+
     def print_all(self):
         if(self.head == None):
             print("No data available")
@@ -59,5 +70,7 @@ ll.insert_start(5)
 ll.insert_start(4)
 ll.insert_start(3)
 ll.insert_start(2)
+
+ll.insert_between(100, 50)
 
 ll.print_all()
