@@ -11,7 +11,7 @@ class SinglyLL:
         temp = Node(data)
         if(self.head != None):
             t1 = self.head
-            while(temp.next != None):
+            while(t1.next != None):
                 t1 = t1.next
             t1.next = temp
         else:
@@ -62,6 +62,8 @@ ll = SinglyLL()
 
 ll.insert_end(10)
 ll.insert_end(20)
+ll.insert_end(30)
+ll.insert_end(40)
 ll.insert_start(5)
 ll.insert_between(30, 5)
 ll.delete_node(20)
