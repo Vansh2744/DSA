@@ -41,6 +41,20 @@ class DoublyLL:
         node.next = temp.next
         temp.next = node
 
+    def delete_node(self, data):
+        temp = self.head
+
+        if(self.head.data == data):
+            self.head = self.head.next
+            self.head.prev = None
+            return
+        while(temp.data != data):
+            temp = temp.next 
+        if(temp.next == None):
+            temp.prev.next = None 
+            return      
+        temp.prev.next = temp.next
+        temp.next.prev = temp.prev
 
     def print_all(self):
         if(self.head == None):
@@ -72,5 +86,8 @@ ll.insert_start(3)
 ll.insert_start(2)
 
 ll.insert_between(100, 50)
+
+ll.delete_node(100)
+ll.delete_node(50)
 
 ll.print_all()
