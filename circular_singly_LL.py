@@ -61,10 +61,7 @@ class CircularSinglyLL:
             while(temp.data != data):
                 prev = temp
                 temp = temp.next
-            if(temp.next == self.head):
-                prev.next = self.head
-            else:
-                prev.next = temp.next
+            prev.next = temp.next
 
 
     def check_connect(self, value):
@@ -95,7 +92,7 @@ ll.insert_start(3)
 
 ll.insert_between(50, 40)
 
-ll.delete_node(30)
+ll.delete_node(50)
 
 ll.print_all()
-# ll.check_connect(50)
+# ll.check_connect(40)
