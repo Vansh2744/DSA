@@ -31,6 +31,31 @@ def search(root, data):
     else:
         search(root.right, data)
 
+def get_successor(root):
+    root = root.right
+    while root.left != None:
+        root = root.left
+    return root
+
+def delete(root, data):
+    if root == None:
+        print("Not Found")
+        return
+    elif root.data > data:
+        root.left = delete(root.left, data)
+    elif root.data < data:
+        root.right = delete(root.right, data)
+    else:
+        if root.left == None:
+            return root.right
+        elif root.right == None:
+            return root.left
+        else:
+            succ = get_successor(root)
+            root.data = succ.data
+            root.right = delete(root.right, succ.data)
+    return root
+
 def inorder_traversal(root):
     if root != None:
         inorder_traversal(root.left)
@@ -48,5 +73,8 @@ root = insert(root, 80)
 inorder_traversal(root)
 
 print("\n")
-search(root, 70)
-search(root, 90)
+# search(root, 70)
+# search(root, 90)
+
+root = delete(root, 30)
+inorder_traversal(root)
