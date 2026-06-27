@@ -1,4 +1,1 @@
-arr = [1,2,3,4,5,6]
-
-for i in range(len(arr),0,-1):
-    print(i)
+print(len([]))
