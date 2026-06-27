@@ -1,8 +1,4 @@
-def stairs(n:int)->int:
-    one,two = 1,1
-    for _ in range(n-1):
-        one,two = two, one+two
-    
-    return two
+arr = [1,2,3,4,5,6]
 
-print(stairs(5))
+for i in range(len(arr),0,-1):
+    print(i)
